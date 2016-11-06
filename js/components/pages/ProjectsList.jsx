@@ -14,8 +14,8 @@ module.exports = React.createClass({
 			return (
 				<div className="loading-wrap">
 					<div className="loading"><span className="fa fa-bomb fa-spin"></span> ISSUE:</div>
-				<br/>
-					<h2>Can't figure how to pop the featured image from a cpt</h2>
+				
+					<h2>At the moment the featured image can't be shown for ctps</h2>
 				</div>
 			)
 		}

@@ -2,13 +2,15 @@ import React from 'react'
 import { fetchProjects } from '../../actions'
 import { Link } from 'react-router'
 
+// const URL = location.href;
+
 module.exports = React.createClass({
 
 	componentDidMount: function() {
-		this.props.dispatch( fetchProjects() )
+		// this.props.dispatch( fetchProjects() )
 	},
 	render: function() {
-		console.log( this.props.posts.projects )
+		// console.log( this.props.posts.projects )
 		return (
 			<div className="Intro">
 				<img src="/wp-content/themes/react/img/faceconic.png" width="300" alt="logo"/>

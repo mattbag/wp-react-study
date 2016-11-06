@@ -28,8 +28,9 @@ module.exports = React.createClass({
 		return (
 			<div className="Posts">
 				<div className="Post">
-					<h1>{page.title.rendered}</h1>
-					{page.page_builder.modules.map( Module => {
+					<h2>{page.title.rendered}</h2>
+					<div dangerouslySetInnerHTML={{__html:page.content.rendered}} />
+					{/* {page.page_builder.modules.map( Module => {
 						switch ( Module.type ) {
 							case 'text':
 								return <Text {...Module.data} />
@@ -45,7 +46,7 @@ module.exports = React.createClass({
 								return <TwitterTimeline {...Module.data} />
 						}
 						return <div></div>
-					})}
+					})} */}
 				</div>
 			</div>
 		)

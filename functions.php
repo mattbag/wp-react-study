@@ -50,11 +50,11 @@ add_action( 'plugins_loaded', function() {
     add_action( 'init', 'better_rest_api_featured_images_init', 99 );
 });
 
-if ( ! function_exists( 'HM\\Autoloader\\register_class_path' ) ) {
-	require_once 'inc/autoloader.php';
-}
-
-HM\Autoloader\register_class_path( 'FeelingRESTful', dirname( __FILE__ ) . '/inc' );
+// if ( ! function_exists( 'HM\\Autoloader\\register_class_path' ) ) {
+// 	require_once 'inc/autoloader.php';
+// }
+//
+// HM\Autoloader\register_class_path( 'FeelingRESTful', dirname( __FILE__ ) . '/inc' );
 
 add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/dist/main.js', array(), wp_get_theme()->Version, true );
@@ -67,42 +67,42 @@ add_action( 'wp_enqueue_scripts', function() {
 
 show_admin_bar( false );
 
-add_post_type_support( 'page', 'modular-page-builder' );
+// add_post_type_support( 'page', 'modular-page-builder' );
+//
+// add_theme_support( 'post-thumbnails' );
+//
+// add_action( 'admin_init', function() {
+// 	remove_post_type_support( 'page', 'editor' );
+// 	remove_post_type_support( 'page', 'discussion' );
+// 	remove_post_type_support( 'page', 'comments' );
+// 	remove_post_type_support( 'page', 'page-attributes' );
+// 	remove_post_type_support( 'page', 'custom-fields' );
+// 	remove_post_type_support( 'page', 'thumbnail' );
+// 	remove_post_type_support( 'page', 'author' );
+// } );
 
-add_theme_support( 'post-thumbnails' );
+// add_action( 'init', function() {
+//
+// 	if ( ! class_exists( 'ModularPageBuilder\\Plugin' ) ) {
+// 		return;
+// 	}
+//
+// 	$plugin = ModularPageBuilder\Plugin::get_instance();
+// 	$plugin->register_module( 'map', 'FeelingRESTful\\Page_Builder_Modules\\Map' );
+// 	$plugin->register_module( 'twitter_timeline', 'FeelingRESTful\\Page_Builder_Modules\\Twitter_Timeline' );
+//
+// 	// Part of enabling previews
+// 	$preview_postmeta = new FeelingRESTful\Preview_Postmeta();
+//
+// 	// Opengraph
+// 	$opengraph = new FeelingRESTful\OpenGraph();
+// } );
 
-add_action( 'admin_init', function() {
-	remove_post_type_support( 'page', 'editor' );
-	remove_post_type_support( 'page', 'discussion' );
-	remove_post_type_support( 'page', 'comments' );
-	remove_post_type_support( 'page', 'page-attributes' );
-	remove_post_type_support( 'page', 'custom-fields' );
-	remove_post_type_support( 'page', 'thumbnail' );
-	remove_post_type_support( 'page', 'author' );
-} );
-
-add_action( 'init', function() {
-
-	if ( ! class_exists( 'ModularPageBuilder\\Plugin' ) ) {
-		return;
-	}
-
-	$plugin = ModularPageBuilder\Plugin::get_instance();
-	$plugin->register_module( 'map', 'FeelingRESTful\\Page_Builder_Modules\\Map' );
-	$plugin->register_module( 'twitter_timeline', 'FeelingRESTful\\Page_Builder_Modules\\Twitter_Timeline' );
-
-	// Part of enabling previews
-	$preview_postmeta = new FeelingRESTful\Preview_Postmeta();
-
-	// Opengraph
-	$opengraph = new FeelingRESTful\OpenGraph();
-} );
-
-add_filter( 'modular_page_builder_allowed_modules_for_page', function( $allowed ) {
-	$allowed[] = 'map';
-	$allowed[] = 'twitter_timeline';
-	return $allowed;
-} );
+// add_filter( 'modular_page_builder_allowed_modules_for_page', function( $allowed ) {
+// 	$allowed[] = 'map';
+// 	$allowed[] = 'twitter_timeline';
+// 	return $allowed;
+// } );
 
 add_action( 'init', function() {
 	global $wp_rewrite;

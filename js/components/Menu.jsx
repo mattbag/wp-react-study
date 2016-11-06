@@ -16,13 +16,14 @@ module.exports = React.createClass({
 		return (
 			<div className="menu-wrap Menu">
 				<div onClick={this.props.onToggle} className="menu-toggle">
-					<span className="fa fa-bars"></span>
+					{/* <span className="fa fa-bars"></span> */}
+					<img src="/wp-content/themes/react/img/faceconic.png" width="50" alt="logo toggle"/>
 				</div>
 				<ul className={ this.props.isExpanded ? 'menu expanded' : 'menu' }>
 					{this.props.menu.items.map( item => {
 						return <li className={this.props.currentPath === item.url ? 'current' : ''} key={item.name}><Link to={item.url}>{item.name}</Link></li>
 					})}
-					
+
 				</ul>
 			</div>
 		)
